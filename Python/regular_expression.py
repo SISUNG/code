@@ -126,7 +126,7 @@ import re
 m = re.sub(r'(\d{1,2})/(\d{1,2})/(\d{4})',r'\3/\1/\2','2/20/1991')
 print(m)
 
-m = re.split(':', 'sr1:str2')
+m = re.split(':', 'sr1:str2:str3:str4')
 print(m)
 print('str1:str2'.split(':'))
 
@@ -148,9 +148,17 @@ for i in range(randrange(5, 11)):
     login = ''.join(choice(lc) for j in range(llen))
     dlen = randrange(llen, 13)
     dom = ''.join(choice(lc) for j in range(dlen))
-    print('%s::%s@%s.%s::%d-%d-%d' % (dtstr, login, dom, choice(tlds), dtint, llen, dlen))
+    #print('%s::%s@%s.%s::%d-%d-%d' % (dtstr, login, dom, choice(tlds), dtint, llen, dlen))
+
+import re
+reg = '(?<=95|98|NT|2000)Windows'
+#(?=...)如果...跟在字符串后面才做匹配，非获取匹配；称为正向前视断言
+#m = re.search(reg, '2000Windows')
 
 
-
+import re
+m = re.split(':', "str1:str2:str3")
+if m is not None:
+    print('匹配成功-' + m.group())
 
 
