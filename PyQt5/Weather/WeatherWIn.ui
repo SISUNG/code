@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="Form">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>321</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>查询城市天气</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>41</width>
+       <height>9</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>城市</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="resultText">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>281</width>
+       <height>101</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="weatherComboBox">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>30</y>
+       <width>211</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>北京</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>天津</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>上海</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="queryBtn">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>320</y>
+      <width>56</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>查询</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clearBtn">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>320</y>
+      <width>56</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>清空</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>queryBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>queryWeather()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>101</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>101</x>
+     <y>404</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>clearResult()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>265</x>
+     <y>420</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>queryWeather()</slot>
+  <slot>clearResult()</slot>
+ </slots>
+</ui>
